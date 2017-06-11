@@ -12,6 +12,8 @@ import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.face.Face;
 import com.google.android.gms.vision.face.FaceDetector;
 
+import timber.log.Timber;
+
 /**
  * Created by princ on 11-06-2017.
  */
@@ -37,8 +39,10 @@ public class Emojifier {
         // Detect the faces
         SparseArray<Face> faces = detector.detect(frame);
 
+       /* // Log the number of faces
+        Log.d(LOG_TAG, "detectFaces: number of faces = " + faces.size());*/
         // Log the number of faces
-        Log.d(LOG_TAG, "detectFaces: number of faces = " + faces.size());
+        Timber.d("detectFaces: number of faces = " + faces.size());
 
         // Initialize result bitmap to original picture
         Bitmap resultBitmap = picture;
@@ -118,7 +122,12 @@ public class Emojifier {
         Log.d(LOG_TAG, "whichEmoji: rightEyeOpenProb = "
                 + face.getIsRightEyeOpenProbability());
 
-
+        // Log all the probabilities
+        Timber.d("whichEmoji: smilingProb = " + face.getIsSmilingProbability());
+        Timber.d("whichEmoji: leftEyeOpenProb = "
+                + face.getIsLeftEyeOpenProbability());
+        Timber.d("whichEmoji: rightEyeOpenProb = "
+                + face.getIsRightEyeOpenProbability());
         boolean smiling = face.getIsSmilingProbability() > SMILING_PROB_THRESHOLD;
 
         boolean leftEyeClosed = face.getIsLeftEyeOpenProbability() < EYE_OPEN_PROB_THRESHOLD;
@@ -152,6 +161,8 @@ public class Emojifier {
 
         // Log the chosen Emoji
         Log.d(LOG_TAG, "whichEmoji: " + emoji.name());
+        // Log the chosen Emoji
+        Timber.d("whichEmoji: " + emoji.name());
 
         return emoji;
     }

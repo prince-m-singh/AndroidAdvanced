@@ -42,6 +42,7 @@ import java.io.IOException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -81,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         // TODO (2): Set up Timber
+        // Set up Timber
+        Timber.plant(new Timber.DebugTree());
        /* mImageView = (ImageView) findViewById(R.id.image_view);
         mEmojifyButton = (Button) findViewById(R.id.emojify_button);
         mShareFab = (FloatingActionButton) findViewById(R.id.share_button);
