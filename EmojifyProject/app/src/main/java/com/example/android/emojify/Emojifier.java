@@ -21,7 +21,7 @@ public class Emojifier {
     private static final float EMOJI_SCALE_FACTOR = .9f;
     private static final double SMILING_PROB_THRESHOLD = .15;
     private static final double EYE_OPEN_PROB_THRESHOLD = .5;
-
+    // TODO (3): Change all Log statements to Timber logs and remove the LOG_TAG variable
 
 
     static Bitmap detectFacesAndOverlayEmoji(Context context, Bitmap picture) {

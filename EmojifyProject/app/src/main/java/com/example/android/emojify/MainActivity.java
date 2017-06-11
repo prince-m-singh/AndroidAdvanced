@@ -44,7 +44,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
-    // TODO (2): Replace all View declarations with Butterknife annotations
+
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_STORAGE_PERMISSION = 1;
 
@@ -76,9 +76,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // TODO (3): Replace the findViewById calls with the Butterknife data binding
-        ButterKnife.bind(this);
         // Bind the views
+        ButterKnife.bind(this);
+
+
+        // TODO (2): Set up Timber
        /* mImageView = (ImageView) findViewById(R.id.image_view);
         mEmojifyButton = (Button) findViewById(R.id.emojify_button);
         mShareFab = (FloatingActionButton) findViewById(R.id.share_button);
