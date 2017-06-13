@@ -26,7 +26,6 @@ import net.simonvt.schematic.annotation.TableEndpoint;
  * define
  * URIs for the provider
  */
-
 @ContentProvider(
         authority = SquawkProvider.AUTHORITY,
         database = SquawkDatabase.class)
